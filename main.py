@@ -173,7 +173,7 @@ else:
     client = k_amino.Client()
     from_info = client.get_from_link(community_link)
     from_id = from_info.comId
-    file = open('accounts.json')
+    file = open('secret.json')
     date = json.load(file)
 
     def threadit(email: str, secret: str):
