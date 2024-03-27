@@ -1,7 +1,11 @@
-community_link = "http://aminoapps.com/c/NamoroAmino"
+community_link = "http://aminoapps.com/c/Anime9778531"
 
 #proxies = {'http': 'socks5://212.156.216.185:8111','https':'socks5://212.156.216.185:8111'}
 
+
+import os
+os.environ['HTTP_PROXY'] = 'http://itskwel99905IEH:tEUpZdXs3M@77.47.246.29:59100'
+os.environ['HTTPS_PROXY'] = 'http://itskwel99905IEH:tEUpZdXs3M@77.47.246.29:59100'
 from k_amino import(
 Client,
 SubClient
@@ -12,7 +16,7 @@ from time import sleep
 import threading
 from colorama import Fore
 
-print("\t\033[1;31m Super Fast         Termux Edition\n\n")
+print("\t\033[1;31m Super Fast         Heroku Edition\n\n")
 animation = '''
 
 
@@ -173,14 +177,15 @@ else:
     client = k_amino.Client()
     from_info = client.get_from_link(community_link)
     from_id = from_info.comId
-    file = open('secret.json')
+    file = open('account100.json')
     date = json.load(file)
 
-    def threadit(email: str, secret: str):
+    def threadit(secret: str):
         try:
-            client.login(email, secret)
-            print(H + '\nlogged to k_amino.py with ',email)
-            time.sleep(10)
+            client.login_secret(secret)
+	    #time.sleep(30)
+            print(H + '\nlogged to k_amino.py with ',secret)
+            #time.sleep(30)
             client.join_community(comId=from_id)
             print(H + '\nJoined ',community_link)
             from_client = SubClient(comId=from_id,client=client)
@@ -201,9 +206,9 @@ else:
 
     def main():
         for acc in date:
-            email = acc['email']
+            #email = acc['email']
             secret = acc['secret']
-            threadit(email=email, secret=secret)
+            threadit(secret=secret)
 
 
     if __name__ == '__main__':
