@@ -4,9 +4,6 @@ community_link = "http://aminoapps.com/c/Anime9778531"
 
 
 import os
-os.environ['HTTP_PROXY'] = 'http://itskwel99905IEH:tEUpZdXs3M@77.47.246.29:59100'
-os.environ['HTTPS_PROXY'] = 'http://itskwel99905IEH:tEUpZdXs3M@77.47.246.29:59100'
-from k_amino import(
 Client,
 SubClient
 )
